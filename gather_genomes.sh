@@ -28,4 +28,13 @@ cat Wolbachia_genome_tbl.txt | while read line; do
     gunzip FAA/${name}.faa.gz
 done
 
-
+### rename FAA proteins to be more descriptive for viewing in phylogeny (subgroup, wolbachia species, genome name)
+cat Wolbachia_genome_tbl.txt | while read line; do
+    name=$(echo ${line} | awk '{ print $1 }')
+    fna=$(echo ${line} | awk '{ print $2 }')
+    gff=$(echo ${line} | awk '{ print $3 }')
+    faa=$(echo ${line} | awk '{ print $4 }')
+    old="WP_"
+    new="${name}_WP_"
+    sed -i "s/$old/$new/g" FAA/${name}.faa
+done
