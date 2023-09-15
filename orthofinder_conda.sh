@@ -13,7 +13,7 @@
 
 cd /hb/home/aanakamo/bootcamp2023
 
-conda create -y -n OrthoFinder
-conda activate OrthoFinder
+#conda create -y -n OrthoFinder
+source activate /hb/home/aanakamo/.conda/envs/OrthoFinder
 conda install -y -c bioconda orthofinder
 conda deactivate
