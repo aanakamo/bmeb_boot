@@ -29,3 +29,13 @@ busco -i ../FNA/${genome_name}.fna -o ${genome_name} -l ${lineage} -m genome -c 
 #     name=$(echo ${line} | awk '{ print $1 }')
 #     sbatch bmeb_boot/busco.sh ${name} ${lineage}
 # done
+
+## to generate a plot with all the individual busco runs:
+# cd /hb/home/aanakamo/bootcamp2023/BUSCO
+# module load busco
+# mkdir -p BUSCO_summaries
+# cp */short_summary.specific.rickettsiales_odb10.*.txt BUSCO_summaries/
+# python3 /hb/software/apps/busco/src/busco-5.4.5/scripts/generate_plot.py --working_directory  BUSCO_summaries/
+
+## to get the busco completeness scores in tabular format:
+
