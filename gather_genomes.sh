@@ -16,10 +16,10 @@ mkdir -p FNA GFF FAA
 
 ### download fna, gff, and faa from NCBI
 cat Wolbachia_genome_tbl.txt | while read line; do
-    name=$(echo ${line} | awk -v FS="\t" '{ print $9 }')
-    fna=$(echo ${line} | awk -v FS="\t" '{ print $10 }')
-    gff=$(echo ${line} | awk -v FS="\t" '{ print $11 }')
-    faa=$(echo ${line} | awk -v FS="\t" '{ print $12 }')
+    name=$(echo ${line} | awk '{ print $1 }')
+    fna=$(echo ${line} | awk '{ print $2 }')
+    gff=$(echo ${line} | awk '{ print $3 }')
+    faa=$(echo ${line} | awk '{ print $4 }')
     wget -O FNA/${name}.fna.gz ${fna}
     gunzip FNA/${name}.fna.gz
     wget -O GFF/${name}.gff.gz ${gff}
