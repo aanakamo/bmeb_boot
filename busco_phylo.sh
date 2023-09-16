@@ -10,9 +10,9 @@
 #SBATCH --output=slurm_%j.out             # Standard output and error log
 #SBATCH --error=slurm_%j.err              # Standard output and error log
 
-cd /hb/home/aanakamo/bootcamp2023
+cd /hb/home/aanakamo/
 
-git clone https://github.com/jamiemcg/BUSCO_phylogenomics
+#git clone https://github.com/jamiemcg/BUSCO_phylogenomics
 cd BUSCO_phylogenomics
 
 conda env create -f conda_env.yaml
