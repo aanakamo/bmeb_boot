@@ -12,8 +12,7 @@
 
 cd /hb/home/aanakamo/
 
-#git clone https://github.com/jamiemcg/BUSCO_phylogenomics
-cd BUSCO_phylogenomics
-
-conda env create -y -f conda_env.yaml
-#conda activate BUSCO_phylogenomics
+conda create -y -n MMseqs2
+source activate /hb/home/aanakamo/.conda/envs/MMseqs2
+conda install -y -c conda-forge -c bioconda mmseqs2
+conda deactivate
