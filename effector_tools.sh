@@ -16,8 +16,8 @@
 cd /hb/home/aanakamo/bootcamp2023/EFFECTORS
 
 ### SignalP
-# wget https://services.healthtech.dtu.dk/download/bd014f23-3a12-4466-9df0-2a0114c3743d/signalp-5.0b.Linux.tar.gz
-# tar -xvzf *tar.gz
+wget https://services.healthtech.dtu.dk/download/bd014f23-3a12-4466-9df0-2a0114c3743d/signalp-5.0b.Linux.tar.gz
+tar -xvzf *tar.gz
 
 ### tmhmm
 wget https://services.healthtech.dtu.dk/download/b133f4f0-f31c-4fbd-8fa2-484318266e7a/tmhmm-2.0c.Linux.tar.gz
