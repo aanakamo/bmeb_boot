@@ -12,12 +12,19 @@
 
 cd /hb/home/aanakamo/bootcamp2023
 
-#conda create -y -n OrthoFinder
-source activate /hb/home/aanakamo/.conda/envs/OrthoFinder
+# conda create -y -n OrthoFinder
+# source activate /hb/home/aanakamo/.conda/envs/OrthoFinder
+# echo "*** ACTIVATED ***"
+# conda install -y -c bioconda orthofinder
+# conda install -y -c bioconda python=3.8
+# echo "*** python installed ***"
+# conda install -y -c bioconda diamond=2.1.4
+# echo "*** diamond installed ***"
+# conda deactivate
+
+conda create -y -n OrthoFinder2 python=3.8.12
+source activate /hb/home/aanakamo/.conda/envs/OrthoFinder2
 echo "*** ACTIVATED ***"
-#conda install -y -c bioconda orthofinder
-conda install -y -c bioconda python=3.8
-echo "*** python installed ***"
-conda install -y -c bioconda diamond=2.1.4
-echo "*** diamond installed ***"
+conda install -y -c bioconda orthofinder=2.5.4 diamond=2.1.4
+echo "*** installed ***"
 conda deactivate
