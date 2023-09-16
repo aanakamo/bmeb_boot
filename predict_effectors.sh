@@ -17,7 +17,8 @@ GENOME=$1
 cd /hb/home/aanakamo/bootcamp2023/EFFECTORS
 
 ### SignalP: Determine proteins with signal peptide (membrane targeted)
-signalp-5.0b/bin/signalp -fasta ../FAA/${GENOME}.faa -prefix signalp_${GENOME} -org "gram-"
+export PATH="/hb/home/aanakamo/bootcamp2023/EFFECTORS/signalp-5.0b/bin:$PATH"
+signalp -fasta ../FAA/${GENOME}.faa -prefix signalp_${GENOME} -org "gram-"
 awk '{if ($2 == "SP(Sec/SPI)") {print $1}}' signalp_${GENOME}_summary.signalp5 > signalp_secrete_points_names_${GENOME}
 awk '/^>/ {printf("\n%s\n",$0);next; } { printf("%s",$0);}  END {printf("\n");}' ../FAA/${GENOME}.faa > ${GENOME}.singleline.faa
 
@@ -27,7 +28,8 @@ while read gene; do
 done < signalp_secrete_points_names_${GENOME}
 
 ### TMHMM: Determine non-membrane bound proteins
-tmhmm-2.0c/bin/tmhmm signalp-5.0b/bin/${GENOME}_signalp_proteins.faa > tmhmm_output_${GENOME}
+export PATH="/hb/home/aanakamo/bootcamp2023/EFFECTORS/tmhmm-2.0c/bin:$PATH"
+tmhmm signalp-5.0b/bin/${GENOME}_signalp_proteins.faa > tmhmm_output_${GENOME}
 
 grep "Number" tmhmm_output_${GENOME} | awk '{if ($7 == 0){print $2}} ' > ${GENOME}_signalp_notmhmm_protein_names
 
