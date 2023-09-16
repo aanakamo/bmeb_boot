@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 #SBATCH --partition=Instruction         # Partition/queue to run on
