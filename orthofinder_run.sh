@@ -15,6 +15,6 @@
 
 cd /hb/home/aanakamo/bootcamp2023/ORTHOFINDER
 
-source activate /hb/home/aanakamo/.conda/envs/OrthoFinder
+source activate /hb/home/aanakamo/.conda/envs/OrthoFinder2
 orthofinder -f ../FAA -t 20 -a 5 -M msa -A mafft -T fasttree -o OrthoFinder_out # -S diamond_ultra_sens
 conda deactivate
