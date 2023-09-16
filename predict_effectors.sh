@@ -29,11 +29,11 @@ done < signalp_secrete_points_names_${GENOME}
 
 ### TMHMM: Determine non-membrane bound proteins
 export PATH="/hb/home/aanakamo/bootcamp2023/EFFECTORS/tmhmm-2.0c/bin:$PATH"
-tmhmm signalp-5.0b/bin/${GENOME}_signalp_proteins.faa > tmhmm_output_${GENOME}
+tmhmm ${GENOME}_signalp_proteins.faa > tmhmm_output_${GENOME}
 
 grep "Number" tmhmm_output_${GENOME} | awk '{if ($7 == 0){print $2}} ' > ${GENOME}_signalp_notmhmm_protein_names
 
 > ${GENOME}_signalp_notmhmm_proteins.faa
 while read gene; do
-    grep -A1 ${gene} signalp-5.0b/bin/${GENOME}.singleline.faa >> ${GENOME}_signalp_notmhmm_proteins.faa
+    grep -A1 ${gene} ${GENOME}.singleline.faa >> ${GENOME}_signalp_notmhmm_proteins.faa
 done < ${GENOME}_signalp_notmhmm_protein_names
