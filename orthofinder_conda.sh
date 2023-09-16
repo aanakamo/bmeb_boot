@@ -16,8 +16,8 @@ cd /hb/home/aanakamo/bootcamp2023
 source activate /hb/home/aanakamo/.conda/envs/OrthoFinder
 echo "*** ACTIVATED ***"
 #conda install -y -c bioconda orthofinder
-#conda install -y -c bioconda python=3.7
-#echo "*** python installed ***"
-conda install -y -c bioconda diamond=2.1.8
+conda install -y -c bioconda python=3.8
+echo "*** python installed ***"
+conda install -y -c bioconda diamond=2.1.4
 echo "*** diamond installed ***"
 conda deactivate
