@@ -19,6 +19,7 @@ source activate /hb/home/aanakamo/.conda/envs/MMseqs2
 ### cluster putative secreted proteins
 mkdir ALL_SECRETED_mmseqs2 ALL_SECRETED_tmp
 cat *_signalp_notmhmm_proteins.faa > ALL_SECRETED.faa
-mmseqs easy-cluster ALL_SECRETED.faa ALL_SECRETED_mmseqs2 ALL_SECRETED_tmp
+mmseqs createdb ALL_SECRETED.faa ALL_SECRETED.DB
+mmseqs cluster ALL_SECRETED.DB ALL_SECRETED_mmseqs2 ALL_SECRETED_tmp
 
 conda deactivate
