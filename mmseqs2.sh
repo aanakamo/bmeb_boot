@@ -10,7 +10,7 @@
 #SBATCH --output=slurm_%j.out             # Standard output and error log
 #SBATCH --error=slurm_%j.err              # Standard output and error log
 
-cd /hb/home/aanakamo/EFFECTORS
+cd /hb/home/aanakamo/bootcamp2023/EFFECTORS
 
 #conda create -y -n MMseqs2
 source activate /hb/home/aanakamo/.conda/envs/MMseqs2
@@ -18,7 +18,7 @@ source activate /hb/home/aanakamo/.conda/envs/MMseqs2
 
 ### cluster putative secreted proteins
 mkdir ALL_SECRETED_mmseqs2 ALL_SECRETED_tmp
-cat *_signalp_notmhmm_proteins.faa > ALL_SECRETED.fasta
-mmseqs easy-cluster ALL_SECRETED.fasta ALL_SECRETED_mmseqs2 ALL_SECRETED_tmp
+cat *_signalp_notmhmm_proteins.faa > ALL_SECRETED.faa
+mmseqs easy-cluster ALL_SECRETED.faa ALL_SECRETED_mmseqs2 ALL_SECRETED_tmp
 
 conda deactivate
